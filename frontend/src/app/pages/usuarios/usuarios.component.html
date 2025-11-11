@@ -1,7 +1,7 @@
 <div class="card">
   <div class="header">
     <h3>Gestionar Usuarios</h3>
-    <button class="nuevo">+ Nuevo</button>
+    <button class="nuevo" (click)="openDlgNewUser()">+ Nuevo</button>
   </div>
 
   <div class="filters">
@@ -39,7 +39,7 @@
         <td>{{u.telefono}}</td>
         <td>{{u.rol}}</td>
         <td>
-          <span class="material-icons editar">edit</span>
+          <span class="material-icons editar" (click)="openDlgEditUser(u)">edit</span>
           <span class="material-icons eliminar">delete</span>
         </td>
       </tr>

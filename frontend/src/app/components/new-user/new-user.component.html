@@ -1,0 +1,65 @@
+<h2>Crear Usuario</h2>
+
+<div class="form-grid">
+    <div class="field">
+        <label>Nombre</label>
+        <input type="text">
+    </div>
+
+    <div class="field">
+        <label>Apellidos</label>
+        <input type="text">
+    </div>
+
+    <div class="field">
+        <label>DNI</label>
+        <input type="text">
+    </div>
+
+    <div class="field">
+        <label>Sexo</label>
+        <select [(ngModel)]="selected" name="sexo">
+            @for (sexo of sexos; track sexo) {
+                <option [value]="sexo.value"> {{ sexo.viewValue }}</option>
+            }
+        </select>
+    </div>
+
+    <div class="field">
+        <label>Teléfono</label>
+        <input type="text">
+    </div>
+
+    <div class="field">
+        <label>Dirección</label>
+        <input type="text">
+    </div>
+
+    <div class="field">
+        <label>Área</label>
+        <select [(ngModel)]="selected" name="area">
+            @for (area of areas; track area) {
+                <option [value]="area.value"> {{ area.viewValue }}</option>
+            }
+        </select>
+    </div>
+
+    <div class="field">
+        <label>Rol</label>
+        <select [(ngModel)]="selected" name="rol">
+            @for (rol of roles; track rol) {
+                <option [value]="rol.value"> {{ rol.viewValue }}</option>
+            }
+        </select>
+    </div>
+
+    <div class="field full">
+        <label>Contraseña</label>
+        <input type="password">
+    </div>
+</div>
+
+<div class="actions">
+    <button class="btn cancel" (click)="NoClick()">Cancelar</button>
+    <button class="btn create" [mat-dialog-close]="Crear()">+ Crear</button>
+</div>
