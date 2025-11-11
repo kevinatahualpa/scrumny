@@ -1,0 +1,53 @@
+<div class="card">
+  <div class="header">
+    <h3>Gestionar Usuarios</h3>
+    <button class="nuevo">+ Nuevo</button>
+  </div>
+
+  <div class="filters">
+    <select>
+      <option>Rol</option>
+    </select>
+    <select>
+      <option>Sexo</option>
+    </select>
+    <input type="text" placeholder="Buscar...">
+  </div>
+
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Nombres</th>
+        <th>Apellidos</th>
+        <th>DNI</th>
+        <th>Correo</th>
+        <th>Sexo</th>
+        <th>Teléfono</th>
+        <th>Rol</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let u of usuarios">
+        <td>{{u.id}}</td>
+        <td>{{u.nombre}}</td>
+        <td>{{u.apellido}}</td>
+        <td>{{u.dni}}</td>
+        <td>{{u.correo}}</td>
+        <td>{{u.sexo}}</td>
+        <td>{{u.telefono}}</td>
+        <td>{{u.rol}}</td>
+        <td>
+          <span class="material-icons editar">edit</span>
+          <span class="material-icons eliminar">delete</span>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="footer">
+    <span>1 2 3 4 ←</span>
+    <button class="imprimir">Imprimir</button>
+  </div>
+</div>

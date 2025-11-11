@@ -1,0 +1,41 @@
+<div>
+    <div class="head"></div>
+    <div class="body">
+        <div class="modul">
+            <img src="https://www.cec-epn.edu.ec/wp-content/sabai/File/files/l_5766cc8a4211c077bd19f248dd38b41b.jpg"
+                alt="">
+
+            <div class="login-container">
+
+                <h2>Iniciar Sesión</h2>
+                <hr>
+
+                <label for="username">Nombre de Usuario</label>
+                <div class="input-group">
+                    <span class="icon material-icons">mail</span>
+                    <input type="text" id="username" placeholder="user name">
+                </div>
+
+                <label for="password">Contraseña:</label>
+                <div class="input-group">
+                    <span class="icon material-icons">lock</span>
+                    <input [type]="showPassword ? 'text' : 'password'" id="password" placeholder="password">
+                    <span class="icon material-icons eye" (click)="togglePasswordVisibility()">
+                        {{ showPassword ? 'visibility_off' : 'visibility' }}
+                    </span>
+                </div>
+
+                <div class="options">
+                    <label><input type="checkbox"> Recordarme</label>
+                    <a href="#">¿Olvidaste tu contraseña?</a>
+                </div>
+
+                <button (click)="iniciarSesion()" class="continue-btn">Continua →</button>
+
+                <p class="derechos">© 2025 HACKTHONY. Todos los derechos reservados. <br>
+                    Soporte • Contacto • Ayuda</p>
+            </div>
+
+        </div>
+    </div>
+</div>

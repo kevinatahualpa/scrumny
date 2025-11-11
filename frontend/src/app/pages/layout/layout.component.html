@@ -1,0 +1,60 @@
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=menu" />
+<div class="layout">
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <img src="https://cdn-icons-png.flaticon.com/512/906/906175.png" alt="logo">
+        </div>
+
+        <nav class="menu">
+            <p class="line">— — — — — — — — — — — — — — — — — — —</p>
+            <p class="menu-title">Áreas</p>
+            <div class="header-card">
+                <img src="https://cdn-icons-png.flaticon.com/512/4333/4333609.png" alt="logo" class="header-logo" />
+
+                <div class="header-title">
+                    <h3>Desarrollo de</h3>
+                    <h3>Software</h3>
+                </div>
+
+                <button class="menu-btn">
+                    <span class="material-symbols-outlined">
+                        menu
+                    </span>
+                </button>
+            </div>
+            <ul>
+                <li>Dashboard</li>
+                <li>Gestión Proyectos</li>
+                <li>Participantes</li>
+                <li>Configuraciones</li>
+            </ul>
+
+            <p class="line">— — — — — — — — — — — — — — — — — — —</p>
+            <p class="menu-title">Proyectos</p>
+            <ul>
+                <li>Pr. Análisis del Sistema</li>
+                <li>Pr. Diseño del Sistema</li>
+                <li>Pr. Desarrollo del Sistema</li>
+            </ul>
+
+            <p class="line">— — — — — — — — — — — — — — — — — — —</p>
+            <ul>
+                <li>Gestionar Usuarios</li>
+                <li>Gestionar Áreas</li>
+            </ul>
+        </nav>
+    </aside>
+
+    <main class="main">
+        <header class="topbar">
+            <div class="user">
+                <span class="material-icons">account_circle</span>
+                <span>User</span>
+            </div>
+        </header>
+
+        <section class="content">
+            <router-outlet></router-outlet>
+        </section>
+    </main>
+</div>
