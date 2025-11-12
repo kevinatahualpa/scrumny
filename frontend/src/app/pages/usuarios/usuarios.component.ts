@@ -14,8 +14,8 @@ import { EditUserComponent } from '../../components/edit-user/edit-user.componen
 export class UsuariosComponent {
 
   usuarios = [
-    { id: '001', nombre: 'Kevin Anthony', apellido: 'Motuhaipo Palomino', dni: '78100711', correo: 'example9', sexo: 'Masculino', telefono: '981923123', rol: 'Super Admin' },
-    { id: '002', nombre: 'Ricardo', apellido: 'Cuzcano Hernandez', dni: '78100721', correo: 'example9', sexo: 'Masculino', telefono: '981923123', rol: 'Jefe de Area' },
+    { id: '001', nombre: 'Kevin Anthony', apellido: 'Motuhaipo Palomino', dni: '78100711', correo: 'example2', sexo: 'Masculino', telefono: '981923123', rol: 'Super Admin' },
+    { id: '002', nombre: 'Ricardo', apellido: 'Cuzcano Hernandez', dni: '78100721', correo: 'example5', sexo: 'Masculino', telefono: '981923123', rol: 'Jefe de Area' },
     { id: '003', nombre: 'Mitel', apellido: 'Rubles Shantal', dni: '78100731', correo: 'example9', sexo: 'Femenino', telefono: '981924313', rol: 'Participante' }
   ];
 
