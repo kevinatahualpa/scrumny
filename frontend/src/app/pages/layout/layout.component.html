@@ -24,7 +24,8 @@
             </div>
             <ul>
                 <li>Dashboard</li>
-                <li>Gestión Proyectos</li>
+                <!-- <li>Gestión Proyectos</li> -->
+                <li routerLink="/layout/proyectos" routerLinkActive="active">Gestión Proyectos</li>
                 <li>Participantes</li>
                 <li>Configuraciones</li>
             </ul>
@@ -39,8 +40,16 @@
 
             <p class="line">— — — — — — — — — — — — — — — — — — —</p>
             <ul>
-                <li>Gestionar Usuarios</li>
-                <li>Gestionar Áreas</li>
+                <!-- <li>Gestionar Usuarios</li> -->
+                <!-- <li>Gestionar Áreas</li> -->
+                <!-- <a (click)="gestionarArea()" class="forgot-link">Gestionar Áreas</a> -->
+                <!-- <li><a routerLink="/layout/usuarios">Gestionar Áreas</a></li>
+                <li><a routerLink="/layout/areas">Gestionar Áreas</a></li> -->
+
+  <li routerLink="/layout/usuarios" routerLinkActive="active">Gestionar Usuarios</li>
+  <li routerLink="/layout/areas" routerLinkActive="active">Gestionar Áreas</li>
+
+
             </ul>
         </nav>
     </aside>

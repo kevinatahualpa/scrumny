@@ -1,0 +1,99 @@
+.card {
+  background-color: white;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.nuevo {
+  background-color: #5a6fff;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  padding: 8px 15px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.nuevo:hover {
+  background-color: #454fd1;
+}
+
+.filters {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.filters select,
+.filters input {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 5px 10px;
+  font-size: 14px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+thead {
+  background-color: #dce0e5;
+}
+
+th, td {
+  text-align: left;
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+.editar {
+  color: orange;
+  cursor: pointer;
+  margin-right: 10px;
+  transition: color 0.2s;
+}
+
+.editar:hover {
+  color: #ff9800;
+}
+
+.eliminar {
+  color: red;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.eliminar:hover {
+  color: #f44336;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 15px;
+}
+
+.imprimir {
+  background-color: #00b37e;
+  border: none;
+  color: white;
+  border-radius: 20px;
+  padding: 8px 15px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.imprimir:hover {
+  background-color: #00875f;
+}

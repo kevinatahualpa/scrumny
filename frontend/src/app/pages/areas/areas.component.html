@@ -1,0 +1,89 @@
+<!-- <div class="head"></div>
+<div class="body">
+  <div class="modul">
+    <div class="content">
+      <h2>Gestión de Áreas</h2>
+      <hr>
+
+      <button class="continue-btn" (click)="nuevaArea()">➕ Nueva Área</button>
+      <button class="continue-btn" (click)="editarArea()">✏️ Editar Área</button>
+
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Nombre del Área</th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>Desarrollo</td>
+              <td>
+                <button class="action-btn" (click)="editarArea()">Editar</button>
+              </td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>Recursos Humanos</td>
+              <td>
+                <button class="action-btn" (click)="editarArea()">Editar</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <button class="back-btn" (click)="volverLayout()">← Volver</button>
+    </div>
+  </div>
+</div> -->
+
+
+<div class="card">
+  <div class="header">
+    <h3>Gestionar Áreas</h3>
+    <button class="nuevo" (click)="openDlgNewArea()">+ Nuevo</button>
+  </div>
+
+  <div class="filters">
+    <select>
+      <option>Área</option>
+    </select>
+    <select>
+      <option>Jefe de Área</option>
+    </select>
+    <input type="text" placeholder="Buscar...">
+  </div>
+
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Proyecto</th>
+        <th>Jefe de Proyecto</th>
+        <th>Miembros</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let a of areas">
+        <td>{{ a.id }}</td>
+        <td>{{ a.proyecto }}</td>
+        <td>{{ a.jefeProyecto }}</td>
+        <td>{{ a.miembros }}</td>
+        <td>
+          <span class="material-icons editar" (click)="openDlgEditArea(a)">edit</span>
+          <span class="material-icons eliminar">delete</span>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="footer">
+    <span>1 2 3 4 ←</span>
+    <button class="imprimir">Imprimir</button>
+  </div>
+</div>

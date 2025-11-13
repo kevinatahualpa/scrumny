@@ -1,0 +1,36 @@
+<h2>Crear Área</h2>
+
+<div class="form-box">
+  <div class="form-grid">
+
+    <div class="field">
+      <label>ID</label>
+      <input type="text" placeholder="Ej. A001">
+    </div>
+
+    <div class="field">
+      <label>Proyecto</label>
+      <input type="text" placeholder="Nombre del Proyecto">
+    </div>
+
+    <div class="field">
+      <label>Jefe de Proyecto</label>
+      <select [(ngModel)]="selectedJefe" name="jefeProyecto">
+        @for (jefe of jefes; track jefe) {
+          <option [value]="jefe.value">{{ jefe.viewValue }}</option>
+        }
+      </select>
+    </div>
+
+    <div class="field full">
+      <label>Miembros</label>
+      <input type="text" placeholder="Ej. Ana, Luis, Pedro">
+    </div>
+
+  </div>
+
+  <div class="actions">
+    <button class="btn cancel" (click)="NoClick()">Cancelar</button>
+    <button class="btn create" [mat-dialog-close]="Crear()">+ Crear</button>
+  </div>
+</div>

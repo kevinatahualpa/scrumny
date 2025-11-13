@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-layout',
@@ -10,4 +10,9 @@ import { RouterModule } from '@angular/router';
 })
 export class LayoutComponent {
   
+  constructor(private router: Router) {} // ✅ Inyección del router
+
+  // gestionarArea() {
+  //   this.router.navigate(['/areas']); // ✅ Usa barra inicial por convención
+  // }
 }

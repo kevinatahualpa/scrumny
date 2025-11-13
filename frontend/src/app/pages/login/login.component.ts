@@ -19,4 +19,7 @@ export class LoginComponent {
   iniciarSesion() {
     this.router.navigate(['layout'])
   }
+    irAForgotPassword() {
+    this.router.navigate(['forgot-password']); // ✅ navega al componente de recuperar contraseña
+  }
 }

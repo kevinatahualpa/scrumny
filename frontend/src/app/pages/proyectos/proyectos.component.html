@@ -1,0 +1,54 @@
+<div class="card"> 
+  <div class="header">
+    <h3>Gestionar Proyectos</h3>
+    <button class="nuevo" (click)="openDlgNewProject()">+ Nuevo</button>
+  </div>
+
+  <!-- Filtros visuales (sin función aún) -->
+  <div class="filters">
+    <select>
+      <option>Todos los proyectos</option>
+    </select>
+
+    <select>
+      <option>Todos los estados</option>
+    </select>
+
+    <input type="date">
+    <input type="text" placeholder="Buscar...">
+  </div>
+
+
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Proyecto</th>
+        <th>Jefe de Proyecto</th>
+        <th>Inicio</th>
+        <th>Fecha de Vencimiento</th>
+        <th>Estado</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let p of proyectosFiltrados()">
+        <td>{{ p.id }}</td>
+        <td>{{ p.proyecto }}</td>
+        <td>{{ p.jefeProyecto }}</td>
+        <td>{{ p.inicio }}</td>
+        <td>{{ p.vencimiento }}</td>
+        <td>{{ p.estado }}</td>
+        <td>
+          <span class="material-icons editar" (click)="openDlgEditProject(p)">edit</span>
+          <span class="material-icons eliminar">delete</span>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="footer">
+    <span>1 2 3 4 ←</span>
+    <button class="imprimir">Imprimir</button>
+  </div>
+</div>
