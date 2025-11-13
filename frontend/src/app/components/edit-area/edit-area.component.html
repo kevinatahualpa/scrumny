@@ -1,0 +1,69 @@
+<!-- <p>edit-area works!</p> -->
+
+<!-- 
+<h2>Editar Área</h2>
+
+<div class="form-grid">
+  <div class="field">
+    <label>ID</label>
+    <input type="text" [value]="data.id" disabled>
+  </div>
+
+  <div class="field">
+    <label>Proyecto</label>
+    <input type="text" [(ngModel)]="data.proyecto">
+  </div>
+
+  <div class="field">
+    <label>Jefe de Proyecto</label>
+    <select [(ngModel)]="data.jefeProyecto" name="jefeProyecto">
+      @for (jefe of jefes; track jefe.value) {
+        <option [value]="jefe.value">{{ jefe.viewValue }}</option>
+      }
+    </select>
+  </div>
+
+  <div class="field">
+    <label>Miembros</label>
+    <textarea [(ngModel)]="data.miembros" rows="3" placeholder="Separar nombres por coma..."></textarea>
+  </div>
+</div>
+
+<div class="actions">
+  <button class="btn cancel" (click)="NoClick()">Cancelar</button>
+  <button class="btn create" [mat-dialog-close]="Guardar()">+ Guardar</button>
+</div> -->
+
+
+<h2>Editar Área</h2>
+
+<div class="form-box">
+  <div class="form-grid">
+
+    <div class="field">
+      <label>ID</label>
+      <input type="text" [value]="data.id" disabled>
+    </div>
+
+    <div class="field">
+      <label>Proyecto</label>
+      <input type="text" [(ngModel)]="data.proyecto">
+    </div>
+
+    <div class="field">
+      <label>Jefe de Proyecto</label>
+      <input type="text" [(ngModel)]="data.jefeProyecto">
+    </div>
+
+    <div class="field full">
+      <label>Miembros</label>
+      <input type="text" [(ngModel)]="data.miembros" placeholder="Separar por comas (,)" />
+    </div>
+
+  </div>
+
+  <div class="actions">
+    <button class="btn cancel" (click)="NoClick()">Cancelar</button>
+    <button class="btn create" [mat-dialog-close]="Guardar()">+ Guardar</button>
+  </div>
+</div>

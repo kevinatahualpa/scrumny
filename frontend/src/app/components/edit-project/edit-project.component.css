@@ -1,0 +1,95 @@
+h2 {
+  text-align: center;
+  font-weight: 600;
+  font-size: 20px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.form-box {
+  background: #fff;
+  border: 1px dashed #ccc;
+  border-radius: 10px;
+  padding: 20px 25px;
+  max-width: 600px;
+  margin: 0 auto;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px 20px;
+  padding: 10px 20px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+}
+
+.field label {
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 1px;
+  color: #444;
+}
+
+.field input,
+.field select {
+  padding: 7px 10px;
+  border: 1px solid #d1d1d1;
+  border-radius: 6px;
+  font-size: 14px;
+  outline: none;
+  transition: border 0.2s ease, box-shadow 0.2s ease;
+}
+
+.field input:focus,
+.field select:focus {
+  border-color: #6868dc;
+  box-shadow: 0 0 3px rgba(104, 104, 220, 0.4);
+}
+
+.full {
+  grid-column: span 2;
+}
+
+.actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  border-top: 1px dashed #ccc;
+  padding-top: 15px;
+  margin: 20px 20px;
+}
+
+.btn {
+  padding: 8px 18px;
+  border-radius: 8px;
+  font-weight: 500;
+  font-size: 14px;
+  cursor: pointer;
+  border: none;
+  transition: all 0.3s ease;
+}
+
+.btn.cancel {
+  background-color: #fff;
+  color: #6868dc;
+  border: 1px solid #6868dc;
+}
+
+.btn.cancel:hover {
+  background-color: rgba(104, 104, 220, 0.07);
+}
+
+.btn.create {
+  background-color: #6868dc;
+  color: white;
+  box-shadow: 0 2px 6px rgba(104, 104, 220, 0.4);
+}
+
+.btn.create:hover {
+  background-color: #5757c5;
+}
