@@ -1,0 +1,28 @@
+<div class="view-box">
+
+  <h3>Información del Participante</h3>
+
+  <div class="info">
+    <p><strong>Nombres:</strong> {{ data.nombres }}</p>
+    <p><strong>Apellidos:</strong> {{ data.apellidos }}</p>
+    <p><strong>Correo:</strong> {{ data.correo }}</p>
+    <p><strong>Teléfono:</strong> {{ data.telefono }}</p>
+  </div>
+
+  <hr>
+
+  <h4>Proyecto Asignado</h4>
+
+  <select [(ngModel)]="proyectoSeleccionado">
+    <option *ngFor="let pr of proyectos" [value]="pr">{{ pr }}</option>
+  </select>
+
+  <button class="btn-retirar" (click)="retirarProyecto()">
+    Retirar del Proyecto
+  </button>
+
+  <div class="footer">
+    <button class="btn-cerrar" (click)="cerrar()">Cerrar</button>
+  </div>
+
+</div>

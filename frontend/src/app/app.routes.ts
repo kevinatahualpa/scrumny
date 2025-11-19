@@ -32,6 +32,8 @@ import { ForgotPasswordComponent } from './pages/forgot-password/forgot-password
 import { ResetPasswordComponent } from './pages/reset-password/reset-password.component';
 import { AreasComponent } from './pages/areas/areas.component'; // 👈 IMPORTA TU NUEVO COMPONENTE
 import {ProyectosComponent}from'./pages/proyectos/proyectos.component';
+// import {ParticipantesComponent}from'./pages/participantes/participantes.component';
+import { ParticipantesComponent } from './pages/participantes/participantes.component';
 
 export const routes: Routes = [
   { path: "", component: LoginComponent },
@@ -47,7 +49,8 @@ export const routes: Routes = [
     children: [
       { path: "usuarios", component: UsuariosComponent },
       { path: "areas", component: AreasComponent },     // 👉 Áreas ahora dentro del Layout
-      {path:"proyectos",component:ProyectosComponent}
+      {path:"proyectos",component:ProyectosComponent},
+      {path:"participantes",component:ParticipantesComponent}
     ]
   },
   { path: "**", redirectTo: "" } // redirección por defecto

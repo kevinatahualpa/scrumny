@@ -1,0 +1,32 @@
+<h2>Enviar Invitación</h2>
+
+<div class="form-box">
+
+  <div class="form-grid">
+
+    <div class="field full">
+      <label>Proyecto</label>
+      <select [(ngModel)]="proyecto">
+        <option value="" disabled selected>Seleccione...</option>
+        <option *ngFor="let pr of data.proyectos" [value]="pr">{{ pr }}</option>
+      </select>
+    </div>
+
+    <div class="field full">
+      <label>Correo del participante</label>
+      <input type="email" placeholder="correo@example.com" [(ngModel)]="correo">
+    </div>
+
+    <div class="field full">
+      <label>Mensaje / Descripción (opcional)</label>
+      <textarea class="textarea" rows="4" [(ngModel)]="descripcion"></textarea>
+    </div>
+
+  </div>
+
+  <div class="actions">
+    <button class="btn cancel" (click)="cancelar()">Cancelar</button>
+    <button class="btn create" (click)="enviarInvitacion()">Enviar invitación</button>
+  </div>
+
+</div>
