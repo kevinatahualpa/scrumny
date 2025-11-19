@@ -10,16 +10,20 @@
                 <h2>Iniciar Sesión</h2>
                 <hr>
 
-                <label for="username">Nombre de Usuario</label>
+                <label for="username">Correo Electronico</label>
                 <div class="input-group">
                     <span class="icon material-icons">mail</span>
-                    <input type="text" id="username" placeholder="user name">
+                    <input type="text" id="username" placeholder="Email" [(ngModel)]="username">
                 </div>
 
                 <label for="password">Contraseña:</label>
                 <div class="input-group">
                     <span class="icon material-icons">lock</span>
-                    <input [type]="showPassword ? 'text' : 'password'" id="password" placeholder="password">
+                    <input [type]="showPassword ? 'text' : 'password'"
+                           id="password"
+                           placeholder="password"
+                           [(ngModel)]="password">
+
                     <span class="icon material-icons eye" (click)="togglePasswordVisibility()">
                         {{ showPassword ? 'visibility_off' : 'visibility' }}
                     </span>
@@ -27,15 +31,20 @@
 
                 <div class="options">
                     <label><input type="checkbox"> Recordarme</label>
-                    <!-- <a href="#">¿Olvidaste tu contraseña?</a> -->
-                    <a (click)="irAForgotPassword()" class="forgot-link">¿Olvidaste tu contraseña?</a>
 
+                    <a (click)="irAForgotPassword()" class="forgot-link">
+                        ¿Olvidaste tu contraseña?
+                    </a>
                 </div>
 
-                <button (click)="iniciarSesion()" class="continue-btn">Continua →</button>
+                <button (click)="iniciarSesion()" class="continue-btn">
+                    Continua →
+                </button>
 
-                <p class="derechos">© 2025 HACKTHONY. Todos los derechos reservados. <br>
-                    Soporte • Contacto • Ayuda</p>
+                <p class="derechos">
+                    © 2025 HACKTHONY. Todos los derechos reservados. <br>
+                    Soporte • Contacto • Ayuda
+                </p>
             </div>
 
         </div>

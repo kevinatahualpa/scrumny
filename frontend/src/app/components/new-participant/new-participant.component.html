@@ -1,0 +1,42 @@
+<h2>Nuevo Participante</h2>
+
+<div class="form-box">
+
+  <div class="form-grid">
+
+    <div class="field">
+      <label>Nombres</label>
+      <input [(ngModel)]="participante.nombres" type="text">
+    </div>
+
+    <div class="field">
+      <label>Apellidos</label>
+      <input [(ngModel)]="participante.apellidos" type="text">
+    </div>
+
+    <div class="field">
+      <label>Teléfono</label>
+      <input [(ngModel)]="participante.telefono" type="text">
+    </div>
+
+    <div class="field">
+      <label>Correo</label>
+      <input [(ngModel)]="participante.correo" type="email">
+    </div>
+
+    <div class="field full">
+      <label>Proyecto</label>
+      <select [(ngModel)]="participante.proyecto">
+        <option value="" disabled selected>Seleccione un proyecto</option>
+        <option *ngFor="let p of proyectos" [value]="p">{{ p }}</option>
+      </select>
+    </div>
+
+  </div>
+
+  <div class="actions">
+    <button class="btn cancel" (click)="cancelar()">Cancelar</button>
+    <button class="btn create" (click)="crear()" [disabled]="!formValido()">Crear</button>
+  </div>
+
+</div>

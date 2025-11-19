@@ -1,0 +1,30 @@
+<!-- <div class="delete-box">
+  <h3>Confirmar eliminación</h3>
+
+  <p>
+    ¿Desea eliminar al participante <strong>{{ data.nombres }} {{ data.apellidos }}</strong>?
+  </p>
+
+  <div class="actions">
+    <button class="btn cancelar" (click)="cancelar()">Cancelar</button>
+    <button class="btn eliminar" (click)="confirmar()">Eliminar</button>
+  </div>
+</div> -->
+
+
+<div class="delete-box">
+
+  <span class="material-icons icon-warning">warning</span>
+
+  <h2>Confirmar eliminación</h2>
+
+  <p>
+    ¿Desea retirar al participante <strong>{{ data.nombres }} {{ data.apellidos }}</strong>
+    del área <strong>{{ data.proyecto }}</strong>?
+  </p>
+
+  <div class="actions">
+    <button class="btn cancel" (click)="cancelar()">Cancelar</button>
+    <button class="btn create" (click)="confirmar()">Eliminar</button>
+  </div>
+</div>

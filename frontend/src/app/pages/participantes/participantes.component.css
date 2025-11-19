@@ -98,13 +98,21 @@ th, td {
   background-color: #00875f;
 }
 
-
-.suspender {
-  color: #1e88e5; /* azul */
-  cursor: pointer;
-  margin-right: 10px;
+.buttons-right {
+  display: flex;
+  gap: 10px;
 }
 
-.suspender:hover {
-  opacity: 0.8;
+.invitar {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  padding: 8px 15px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.invitar:hover {
+  background-color: #1e7e34;
 }

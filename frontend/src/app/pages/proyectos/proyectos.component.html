@@ -41,7 +41,17 @@
         <td>{{ p.estado }}</td>
         <td>
           <span class="material-icons editar" (click)="openDlgEditProject(p)">edit</span>
-          <span class="material-icons eliminar">delete</span>
+<span
+  class="material-icons suspender"
+  (click)="toggleEstado(p)"
+  [style.color]="p.estado === 'Suspendido' ? '#28a745' : '#3f51b5'"
+>
+  {{ p.estado === 'Suspendido' ? 'play_circle' : 'pause_circle' }}
+</span>
+
+<span class="material-icons eliminar" (click)="openDlgDeleteProject(p)">delete</span>
+
+
         </td>
       </tr>
     </tbody>

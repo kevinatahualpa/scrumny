@@ -17,6 +17,7 @@ import { CommonModule } from '@angular/common';
 import { MatDialog } from '@angular/material/dialog';
 import { EditProjectComponent } from '../../components/edit-project/edit-project.component';
 import { NewProjectComponent } from '../../components/new-project/new-project.component';
+import { DeleteProjectComponent } from '../../components/delete-project/delete-project.component';
 
 @Component({
   selector: 'app-proyectos',
@@ -60,6 +61,29 @@ export class ProyectosComponent {
     });
   }
 
+//   confirmarEliminacion(p: any) {
+//   const confirmar = window.confirm(
+//     `¿Desea retirar el proyecto "${p.proyecto}" del área?`
+//   );
+
+//   if (confirmar) {
+//     this.proyectos = this.proyectos.filter(proy => proy.id !== p.id);
+//   }
+// }
+openDlgDeleteProject(proyecto: any) {
+  const dialogRef = this.dialog.open(DeleteProjectComponent, {
+    width: '500px',
+    data: proyecto
+  });
+
+  dialogRef.afterClosed().subscribe(result => {
+    if (result === true) {
+      this.proyectos = this.proyectos.filter(p => p.id !== proyecto.id);
+    }
+  });
+}
+
+
   proyectosFiltrados() {
     return this.proyectos.filter(p => {
       const matchProyecto = this.filtroProyecto ? p.proyecto === this.filtroProyecto : true;
@@ -73,4 +97,22 @@ export class ProyectosComponent {
       return matchProyecto && matchEstado && matchFecha && matchBuscar;
     });
   }
+
+    // ✅ MÉTODO DEBE ESTAR DENTRO DE LA CLASE
+//   toggleEstado(p: any) {
+//     if (p.estado === 'Suspendido') {
+//       p.estado = 'Activo';
+//     } else {
+//       p.estado = 'Suspendido';
+//     }
+//   }
+// }
+
+toggleEstado(p: any) {
+  if (p.estado !== 'Suspendido') {
+    p.estado = 'Suspendido';
+  } else {
+    p.estado = 'En progreso'; // O "Activo", lo que uses
+  }
+}
 }

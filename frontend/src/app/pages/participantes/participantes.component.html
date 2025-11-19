@@ -1,0 +1,55 @@
+<div class="card">
+
+  <div class="header">
+    <h3>Gestionar Participantes</h3>
+    
+   <div class="buttons-right">
+    <button class="invitar" (click)="openDlgInviteParticipant()">Invitar</button>
+    <!-- <button class="nuevo" (click)="openDlgNewParticipante()">+ Nuevo</button> -->
+  </div>
+  </div>
+
+  <!-- Filtros visuales -->
+  <div class="filters">
+    <select [(ngModel)]="filtroProyecto">
+      <option value="">Todos los proyectos</option>
+      <option *ngFor="let pr of proyectos" [value]="pr">{{ pr }}</option>
+    </select>
+
+    <input type="text" placeholder="Buscar..." [(ngModel)]="buscarTexto">
+  </div>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Nombres</th>
+        <th>Apellidos</th>
+        <th>Teléfono</th>
+        <th>Correo</th>
+        <th>Proyecto</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr *ngFor="let p of participantesFiltrados()">
+        <td>{{ p.nombres }}</td>
+        <td>{{ p.apellidos }}</td>
+        <td>{{ p.telefono }}</td>
+        <td>{{ p.correo }}</td>
+        <td>{{ p.proyecto }}</td>
+        <td>
+          <!-- <span class="material-icons editar" (click)="openDlgEditParticipante(p)">edit</span> -->
+           <span class="material-icons ver" (click)="openDlgViewParticipant(p)">visibility</span>
+          <span class="material-icons eliminar" (click)="openDlgDeleteParticipante(p)">delete</span>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="footer">
+    <span>1 2 3 4 ←</span>
+    <button class="imprimir">Imprimir</button>
+  </div>
+
+</div>
