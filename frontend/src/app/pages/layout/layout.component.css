@@ -16,7 +16,7 @@
 /* Sidebar */
 .sidebar {
     width: 270px;
-    background-color: #1E2830;
+    background-color: #1f2a38;
     color: white;
     display: flex;
     flex-direction: column;
@@ -24,7 +24,6 @@
     padding: 25px 15px;
     overflow-y: auto;
     box-shadow: 3px 0 8px rgba(0, 0, 0, 0.3);
-    transition: all 0.2s;
 }
 
 .sidebar::-webkit-scrollbar {
@@ -61,27 +60,22 @@
     letter-spacing: 0.5px;
 }
 
-.sidebar ul {
+.menu ul {
     list-style: none;
     margin: 0;
     padding: 0;
 }
 
-.sidebar li {
+.menu li {
     padding: 8px 15px;
-    margin-top: 2px;
-    margin-bottom: 2px;
+    margin: 2px 0;
     border-radius: 10px;
     cursor: pointer;
     font-size: 14px;
     transition: background-color 0.3s, transform 0.1s;
 }
 
-.sidebar li.activo {
-    background-color: #293b4f;
-}
-
-.sidebar li:hover {
+.menu li:hover {
     background-color: #2b3b4e;
     transform: translateX(2px);
 }
@@ -132,76 +126,55 @@
 }
 
 .header-card {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background-color: #1f2a38;
-    border: 2px solid rgba(255, 255, 255, 0.2);
-    border-radius: 12px;
-    padding: 2px 14px;
-    width: 100%;
-    color: white;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #1f2a38;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  padding: 2px 14px;
+  width: 100%;
+  color: white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
 }
 
 .header-logo {
-    width: 20%;
-    height: 20%;
-    border-radius: 10px;
-    background-color: white;
-    object-fit: cover;
+  width: 20%;
+  height: 20%;
+  border-radius: 10px;
+  background-color: white;
+  object-fit: cover;
 }
 
 .header-title {
-    margin-left: 6px;
+  margin-left: 6px;
 }
 
 .header-title h3 {
-    font-family: "Poppins", sans-serif;
-    font-size: 16px;
-    line-height: 1.2;
-    color: #e8ecf3;
-    text-align: center;
-    margin-top: 5px;
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  line-height: 1.2;
+  color: #e8ecf3;
+  text-align: center;
+  margin-top: 5px;
 }
 
 .menu-btn {
-    background: none;
-    border: none;
-    color: white;
-    cursor: pointer;
-    border-radius: 8px;
-    padding: 5px;
-    transition: background-color 0.3s;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  border-radius: 8px;
+  padding: 5px;
+  transition: background-color 0.3s;
 }
 
 .menu-btn:hover {
-    background-color: rgba(255, 255, 255, 0.15);
+  background-color: rgba(255, 255, 255, 0.15);
 }
-
 
 .material-icons {
-    font-size: 30px;
-}
-
-
-
-.layout {
-    display: flex;
-    height: 100vh;
-}
-
-/* Sidebar derecha */
-.sidebar-right {
-    background-color: #26323A;
-    /* opcional */
-    width: 320px;
-    padding: 25px 10px;
-    align-items: start;
-}
-
-.menu-title2 {
-    text-align: center;
+  font-size: 30px;
 }
 
 .user {
@@ -264,5 +237,5 @@
 
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(-5px); }
-  to { opacity: 1; transform: translateY(0); }
+  to { opacity: 1; transform: translateY(0)}
 }

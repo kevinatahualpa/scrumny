@@ -1,64 +1,27 @@
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
-
+<<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=menu" />
 <div class="layout">
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <img src="https://cdn-icons-png.flaticon.com/512/906/906175.png" alt="logo">
+        </div>
 
-    <!-- SIDEBAR IZQUIERDA -->
-    <aside class="sidebar" [class.nav2-activo]="isActive">
-        <div *ngIf="!nav2_isActiv">
-            <div class="sidebar-header">
-                <img src="https://cdn-icons-png.flaticon.com/512/906/906175.png" alt="logo">
-            </div>
+        <nav class="menu">
+            <p class="line">— — — — — — — — — — — — — — — — — — —</p>
+            <p class="menu-title">Áreas</p>
+            <div class="header-card">
+                <img src="https://cdn-icons-png.flaticon.com/512/4333/4333609.png" alt="logo" class="header-logo" />
 
-            <nav class="menu">
-                <p class="line">— — — — — — — — — — — — — — — — — — —</p>
-                <p class="menu-title">Áreas</p>
-                <div class="header-card">
-                    <img src="https://cdn-icons-png.flaticon.com/512/4333/4333609.png" alt="logo" class="header-logo" />
-
-                    <div class="header-title">
-                        <h3>Desarrollo de</h3>
-                        <h3>Software</h3>
-                    </div>
-
-                    <button class="menu-btn">
-                        <span class="material-symbols-outlined"> menu </span>
-                    </button>
+                <div class="header-title">
+                    <h3>Desarrollo de</h3>
+                    <h3>Software</h3>
                 </div>
 
-                <ul>
-                    <li>Dashboard</li>
-                    <li routerLink="/layout/proyectos" routerLinkActive="active" (click)="setActivo('GESTION_PROYECTOS')"  [class.activo]="botonActivo === 'GESTION_PROYECTOS'">Gestión Proyectos</li>
-                    <li>Participantes</li>
-                </ul>
-
-                <p class="line">— — — — — — — — — — — — — — — — — — —</p>
-                <p class="menu-title">Proyectos</p>
-                <ul>
-                    <li  (click)="expandir()">Pr. Análisis del Sistema</li>
-                    <li>Pr. Diseño del Sistema</li>
-                    <li>Pr. Desarrollo del Sistema</li>
-                </ul>
-
-                <p class="line">— — — — — — — — — — — — — — — — — — —</p>
-                <ul>
-                    <li routerLink="/layout/usuarios" routerLinkActive="active" (click)="setActivo('GESTION_USUARIOS')" [class.activo]="botonActivo === 'GESTION_USUARIOS'">Gestionar Usuarios</li>
-                    <li routerLink="/layout/areas" routerLinkActive="active" (click)="setActivo('GESTION_AREAS')" [class.activo]="botonActivo === 'GESTION_AREAS'">Gestionar Áreas</li>
-                </ul>
-            </nav>
-        </div>
-    </aside>
-
-    <!-- SIDEBAR DERECHA (menu2) -->
-    <aside class="sidebar sidebar-right" *ngIf="nav2_isActiv">
-        <nav class="menu2">
-            <span class="material-symbols-outlined regresar" (click)="regresar()">
-                arrow_back
-            </span>
-
-            <div class="sidebar-header">
-                <img src="https://cdn-icons-png.flaticon.com/512/906/906175.png" alt="logo">
+                <button class="menu-btn">
+                    <span class="material-symbols-outlined">
+                        menu
+                    </span>
+                </button>
             </div>
-            <hr>
             <ul>
                 <li>Dashboard</li>
                 <!-- <li>Gestión Proyectos</li> -->
@@ -67,37 +30,32 @@
                 <li routerLink="/layout/participantes" routerLinkActive="active">Participantes</li>
 
                 <li>Configuraciones</li>
-                <li>Proyecto Dashboard</li>
-                <li>Participantes</li>
-                <li>Backlog</li>
-                <li>Reportes</li>
             </ul>
-            <hr>
-            <p class="menu-title2">Sprints</p>
 
-            <div>
-                <div class="sprint_title">
-                    <p># Sprint 1</p>
+            <p class="line">— — — — — — — — — — — — — — — — — — —</p>
+            <p class="menu-title">Proyectos</p>
+            <ul>
+                <li>Pr. Análisis del Sistema</li>
+                <li>Pr. Diseño del Sistema</li>
+                <li>Pr. Desarrollo del Sistema</li>
+            </ul>
 
-                    <span class="material-symbols-outlined flecha">
-                        chevron_right
-                    </span>
-                    <!-- <span class="material-symbols-outlined flecha">
-                    stat_minus_1
-                </span> -->
-                </div>
-                <ul>
-                    <li class="sprint_second"># Sprint Planing </li>
-                    <li class="sprint_second"># Sprint Task Board</li>
-                    <li class="sprint_second"># Sprint Review / Retrospective</li>
-                </ul>
-            </div>
-            <button class="new_sprint">+ Agregar Sprint</button>
+            <p class="line">— — — — — — — — — — — — — — — — — — —</p>
+            <ul>
+                <!-- <li>Gestionar Usuarios</li> -->
+                <!-- <li>Gestionar Áreas</li> -->
+                <!-- <a (click)="gestionarArea()" class="forgot-link">Gestionar Áreas</a> -->
+                <!-- <li><a routerLink="/layout/usuarios">Gestionar Áreas</a></li>
+                <li><a routerLink="/layout/areas">Gestionar Áreas</a></li> -->
 
+  <li routerLink="/layout/usuarios" routerLinkActive="active">Gestionar Usuarios</li>
+  <li routerLink="/layout/areas" routerLinkActive="active">Gestionar Áreas</li>
+
+
+            </ul>
         </nav>
     </aside>
 
-    <!-- CONTENIDO CENTRAL -->
     <main class="main">
         <header class="topbar">
             <!-- <div class="user">
@@ -131,9 +89,9 @@
 
 
         </header>
+
         <section class="content">
             <router-outlet></router-outlet>
         </section>
     </main>
-
 </div>
