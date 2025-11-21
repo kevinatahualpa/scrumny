@@ -16,7 +16,7 @@
 /* Sidebar */
 .sidebar {
     width: 270px;
-    background-color: #1f2a38;
+    background-color: #1E2830;
     color: white;
     display: flex;
     flex-direction: column;
@@ -24,6 +24,7 @@
     padding: 25px 15px;
     overflow-y: auto;
     box-shadow: 3px 0 8px rgba(0, 0, 0, 0.3);
+    transition: all 0.2s;
 }
 
 .sidebar::-webkit-scrollbar {
@@ -60,22 +61,27 @@
     letter-spacing: 0.5px;
 }
 
-.menu ul {
+.sidebar ul {
     list-style: none;
     margin: 0;
     padding: 0;
 }
 
-.menu li {
+.sidebar li {
     padding: 8px 15px;
-    margin: 2px 0;
+    margin-top: 2px;
+    margin-bottom: 2px;
     border-radius: 10px;
     cursor: pointer;
     font-size: 14px;
     transition: background-color 0.3s, transform 0.1s;
 }
 
-.menu li:hover {
+.sidebar li.activo {
+    background-color: #293b4f;
+}
+
+.sidebar li:hover {
     background-color: #2b3b4e;
     transform: translateX(2px);
 }
@@ -126,116 +132,134 @@
 }
 
 .header-card {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background-color: #1f2a38;
-  border: 2px solid rgba(255, 255, 255, 0.2);
-  border-radius: 12px;
-  padding: 2px 14px;
-  width: 100%;
-  color: white;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #1f2a38;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 12px;
+    padding: 2px 14px;
+    width: 100%;
+    color: white;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
 }
 
 .header-logo {
-  width: 20%;
-  height: 20%;
-  border-radius: 10px;
-  background-color: white;
-  object-fit: cover;
+    width: 20%;
+    height: 20%;
+    border-radius: 10px;
+    background-color: white;
+    object-fit: cover;
 }
 
 .header-title {
-  margin-left: 6px;
+    margin-left: 6px;
 }
 
 .header-title h3 {
-  font-family: "Poppins", sans-serif;
-  font-size: 16px;
-  line-height: 1.2;
-  color: #e8ecf3;
-  text-align: center;
-  margin-top: 5px;
+    font-family: "Poppins", sans-serif;
+    font-size: 16px;
+    line-height: 1.2;
+    color: #e8ecf3;
+    text-align: center;
+    margin-top: 5px;
 }
 
 .menu-btn {
-  background: none;
-  border: none;
-  color: white;
-  cursor: pointer;
-  border-radius: 8px;
-  padding: 5px;
-  transition: background-color 0.3s;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    border-radius: 8px;
+    padding: 5px;
+    transition: background-color 0.3s;
 }
 
 .menu-btn:hover {
-  background-color: rgba(255, 255, 255, 0.15);
+    background-color: rgba(255, 255, 255, 0.15);
 }
+
 
 .material-icons {
-  font-size: 30px;
+    font-size: 30px;
 }
 
-.user {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  position: relative;
-  cursor: pointer;
-  padding: 6px 10px;
-  border-radius: 8px;
-  transition: background 0.2s;
+
+
+.layout {
+    display: flex;
+    height: 100vh;
 }
 
-.user:hover {
-  background: rgba(0,0,0,0.05);
+/* Sidebar derecha */
+.sidebar-right {
+    background-color: #26323A;
+    /* opcional */
+    width: 320px;
+    padding: 25px 10px;
+    align-items: start;
 }
 
-.username {
-  font-weight: 500;
+.menu-title2 {
+    text-align: center;
 }
 
-.arrow {
-  font-size: 20px;
+.sprint_title {
+    margin-left: 20px;
+    display: flex;
+    height: 30px;
+    padding: 5px 0px;
+    width: 140px;
 }
 
-.user-menu {
-  position: absolute;
-  top: 42px;
-  right: 0;
-  background: white;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-  padding: 8px 0;
-  min-width: 160px;
-  z-index: 100;
-  animation: fadeIn 0.15s ease-in-out;
+.sprint_title:hover {
+    cursor: pointer;
+    font-size: 17px;
 }
 
-.user-menu button {
-  width: 100%;
-  background: none;
-  border: none;
-  text-align: left;
-  padding: 10px 15px;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  cursor: pointer;
-  font-size: 15px;
+.sprint_second {
+    margin-left: 30px;
+    /* background-color: #2b3b4e; */
 }
 
-.user-menu button:hover {
-  background: #f2f2f2;
+hr {
+    border: none;
+    height: 4px;
+    background-color: #15202c9f;
+    margin: 5px 0px;
 }
 
-.user-menu button span.material-icons {
-  font-size: 20px;
-  color: #444;
+.flecha {
+    /* margin-top: 2px; */
+    margin-left: 10px;
+    height: 20px;
 }
 
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(-5px); }
-  to { opacity: 1; transform: translateY(0)}
+.new_sprint {
+    background: none;
+    border: none;
+    color: #a0aec0;
+    font-size: 15px;
+    margin-left: 20px;
+}
+
+.new_sprint:hover {
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.menu-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.nav2-activo {
+    width: 10px;
+    transition: all 0.2s;
+}
+
+.regresar {
+    margin-left: 10px;
+    cursor: pointer;
 }
