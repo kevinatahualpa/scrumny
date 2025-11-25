@@ -1,6 +1,7 @@
+import { Component, OnInit, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
 import { Router, RouterModule } from '@angular/router';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-layout',
@@ -9,21 +10,49 @@ import { Router, RouterModule } from '@angular/router';
   templateUrl: './layout.component.html',
   styleUrl: './layout.component.css'
 })
+export class LayoutComponent implements OnInit {
+  
+  private router = inject(Router);
+  private authService = inject(AuthService);
 
-export class LayoutComponent {
-  botonActivo: string = ''; // por defecto
+  // --- VARIABLES DE TU DISEÑO ACTUAL ---
+  botonActivo: string = ''; 
   isActive = false;
-  nav2_isActiv = false
-  selectedLink: string = ''; // Variable para guardar el enlace seleccionado
-  userName: string = '';
+  nav2_isActiv = false;
+  selectedLink: string = ''; 
   menuOpen: boolean = false;
 
-  constructor(private router: Router) { }
+  userName: string = 'Usuario'; 
+
+  // 🟢 1. NUEVA VARIABLE DE SEGURIDAD
+  isAdmin: boolean = false;
 
   ngOnInit() {
-
-    this.userName = localStorage.getItem('userName') || 'Usuario';
     this.botonActivo = localStorage.getItem('modulActiv') ?? '';
+    this.cargarDatosUsuario();
+  }
+
+  cargarDatosUsuario() {
+    const userString = localStorage.getItem('user');
+    if (userString) {
+      try {
+        const user = JSON.parse(userString);
+        
+        // Asignar nombre
+        this.userName = user.first_name || user.name || 'Usuario';
+
+        // 🟢 2. VERIFICAR SI ES SUPER ADMIN
+        // Si role_id es 1 o is_super_admin es 1 (o true), entonces ES admin.
+        if (user.role_id === 1 || user.is_super_admin === 1 || user.is_super_admin === true) {
+          this.isAdmin = true;
+        } else {
+          this.isAdmin = false;
+        }
+
+      } catch (e) {
+        console.error('Error leyendo usuario:', e);
+      }
+    }
   }
 
   toggleMenu() {
@@ -31,19 +60,16 @@ export class LayoutComponent {
   }
 
   logout() {
-    localStorage.removeItem('userName');
-    this.router.navigate(['/login']);
+    this.authService.logout();
   }
 
-  // Función para seleccionar un enlace
   selectLink(link: string) {
-    this.selectedLink = link; // Cambiar el enlace seleccionado
+    this.selectedLink = link;
   }
 
   setActivo(nombre: string) {
     this.botonActivo = nombre;
-    localStorage.setItem("modulActiv", nombre)
-    // Puedes también ejecutar otras acciones aquí
+    localStorage.setItem("modulActiv", nombre);
   }
 
   expandir() {

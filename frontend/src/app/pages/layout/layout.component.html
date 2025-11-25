@@ -2,7 +2,6 @@
 
 <div class="layout">
 
-    <!-- SIDEBAR IZQUIERDA -->
     <aside class="sidebar" [class.nav2-activo]="isActive">
         <div *ngIf="!nav2_isActiv">
             <div class="sidebar-header">
@@ -39,16 +38,17 @@
                     <li>Pr. Desarrollo del Sistema</li>
                 </ul>
 
-                <p class="line">— — — — — — — — — — — — — — — — — — —</p>
-                <ul>
-                    <li routerLink="/layout/usuarios" routerLinkActive="active" (click)="setActivo('GESTION_USUARIOS')" [class.activo]="botonActivo === 'GESTION_USUARIOS'">Gestionar Usuarios</li>
-                    <li routerLink="/layout/areas" routerLinkActive="active" (click)="setActivo('GESTION_AREAS')" [class.activo]="botonActivo === 'GESTION_AREAS'">Gestionar Áreas</li>
-                </ul>
-            </nav>
+                <ng-container *ngIf="isAdmin">
+                    <p class="line">— — — — — — — — — — — — — — — — — — —</p>
+                    <ul>
+                        <li routerLink="/layout/usuarios" routerLinkActive="active" (click)="setActivo('GESTION_USUARIOS')" [class.activo]="botonActivo === 'GESTION_USUARIOS'">Gestionar Usuarios</li>
+                        <li routerLink="/layout/areas" routerLinkActive="active" (click)="setActivo('GESTION_AREAS')" [class.activo]="botonActivo === 'GESTION_AREAS'">Gestionar Áreas</li>
+                    </ul>
+                </ng-container>
+                </nav>
         </div>
     </aside>
 
-    <!-- SIDEBAR DERECHA (menu2) -->
     <aside class="sidebar sidebar-right" *ngIf="nav2_isActiv">
         <nav class="menu2">
             <span class="material-symbols-outlined regresar" (click)="regresar()">
@@ -75,9 +75,6 @@
                     <span class="material-symbols-outlined flecha">
                         chevron_right
                     </span>
-                    <!-- <span class="material-symbols-outlined flecha">
-                    stat_minus_1
-                </span> -->
                 </div>
                 <ul>
                     <li class="sprint_second"># Sprint Planing </li>
@@ -85,17 +82,14 @@
                     <li class="sprint_second"># Sprint Review / Retrospective</li>
                 </ul>
             </div>
-            <!-- <button class="new_sprint">+ Agregar Sprint</button> -->
-
         </nav>
     </aside>
 
-    <!-- CONTENIDO CENTRAL -->
     <main class="main">
         <header class="topbar">
-            <div class="user">
+            <div class="user" (click)="logout()" style="cursor: pointer;" title="Cerrar sesión">
                 <span class="material-symbols-outlined">account_circle</span>
-                <span>User</span>
+                <span>{{ userName }}</span>
             </div>
         </header>
         <section class="content">

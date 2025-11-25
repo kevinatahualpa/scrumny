@@ -1,65 +1,52 @@
-<h2>Crear Usuario</h2>
+<h2 mat-dialog-title>Crear Usuario</h2>
 
-<div class="form-grid">
-    <div class="field">
-        <label>Nombre</label>
-        <input type="text">
+<form (ngSubmit)="saveUser()">
+    
+    <div class="form-grid">
+        
+        <div class="field">
+            <label>Nombre</label>
+            <input type="text" name="nombre" [(ngModel)]="userData.first_name" required>
+        </div>
+
+        <div class="field">
+            <label>Apellidos</label>
+            <input type="text" name="apellido" [(ngModel)]="userData.last_name" required>
+        </div>
+
+        <div class="field full">
+            <label>Correo Electrónico</label>
+            <input type="email" name="email" [(ngModel)]="userData.email" required>
+        </div>
+
+        <div class="field">
+            <label>Teléfono</label>
+            <input type="text" name="phone" [(ngModel)]="userData.phone">
+        </div>
+
+        <div class="field">
+            <label>Rol</label>
+            <select name="rol" [(ngModel)]="userData.role_selected" required>
+                @for (rol of roles; track rol) {
+                    <option [value]="rol.value"> {{ rol.viewValue }}</option>
+                }
+            </select>
+        </div>
+
+        <div class="field full">
+            <label>Contraseña</label>
+            <input type="password" name="password" [(ngModel)]="userData.password" required>
+        </div>
+
+        </div>
+
+    <div class="actions" style="margin-top: 20px; display: flex; justify-content: flex-end; gap: 10px;">
+        <button type="button" class="btn cancel" (click)="cancel()">Cancelar</button>
+        
+        <button type="submit" class="btn create" 
+                [disabled]="!userData.email || !userData.password">
+            + Crear
+        </button>
     </div>
 
-    <div class="field">
-        <label>Apellidos</label>
-        <input type="text">
-    </div>
-
-    <div class="field">
-        <label>DNI</label>
-        <input type="text">
-    </div>
-
-    <div class="field">
-        <label>Sexo</label>
-        <select [(ngModel)]="selected" name="sexo">
-            @for (sexo of sexos; track sexo) {
-                <option [value]="sexo.value"> {{ sexo.viewValue }}</option>
-            }
-        </select>
-    </div>
-
-    <div class="field">
-        <label>Teléfono</label>
-        <input type="text">
-    </div>
-
-    <div class="field">
-        <label>Dirección</label>
-        <input type="text">
-    </div>
-
-    <div class="field">
-        <label>Área</label>
-        <select [(ngModel)]="selected" name="area">
-            @for (area of areas; track area) {
-                <option [value]="area.value"> {{ area.viewValue }}</option>
-            }
-        </select>
-    </div>
-
-    <div class="field">
-        <label>Rol</label>
-        <select [(ngModel)]="selected" name="rol">
-            @for (rol of roles; track rol) {
-                <option [value]="rol.value"> {{ rol.viewValue }}</option>
-            }
-        </select>
-    </div>
-
-    <div class="field full">
-        <label>Contraseña</label>
-        <input type="password">
-    </div>
-</div>
-
-<div class="actions">
-    <button class="btn cancel" (click)="NoClick()">Cancelar</button>
-    <button class="btn create" [mat-dialog-close]="Crear()">+ Crear</button>
-</div>
+</form>
