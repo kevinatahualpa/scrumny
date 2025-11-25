@@ -3,43 +3,54 @@
     <div class="body">
         <div class="modul">
             <img src="https://www.cec-epn.edu.ec/wp-content/sabai/File/files/l_5766cc8a4211c077bd19f248dd38b41b.jpg"
-                alt="">
+                alt="Logo">
 
             <div class="login-container">
 
                 <h2>Iniciar Sesión</h2>
                 <hr>
 
-                <label for="username">Correo Electronico</label>
-                <div class="input-group">
-                    <span class="icon material-icons">mail</span>
-                    <input type="text" id="username" placeholder="Email" [(ngModel)]="username">
-                </div>
+                <form (ngSubmit)="iniciarSesion()">
+                    
+                    <label for="username">Correo Electronico</label>
+                    <div class="input-group">
+                        <span class="icon material-icons">mail</span>
+                        <input type="text" 
+                               id="username" 
+                               name="username"
+                               placeholder="Email" 
+                               [(ngModel)]="username"
+                               required>
+                    </div>
 
-                <label for="password">Contraseña:</label>
-                <div class="input-group">
-                    <span class="icon material-icons">lock</span>
-                    <input [type]="showPassword ? 'text' : 'password'"
-                           id="password"
-                           placeholder="password"
-                           [(ngModel)]="password">
+                    <label for="password">Contraseña:</label>
+                    <div class="input-group">
+                        <span class="icon material-icons">lock</span>
+                        <input [type]="showPassword ? 'text' : 'password'"
+                               id="password"
+                               name="password"
+                               placeholder="password"
+                               [(ngModel)]="password"
+                               required>
 
-                    <span class="icon material-icons eye" (click)="togglePasswordVisibility()">
-                        {{ showPassword ? 'visibility_off' : 'visibility' }}
-                    </span>
-                </div>
+                        <span class="icon material-icons eye" (click)="togglePasswordVisibility()">
+                            {{ showPassword ? 'visibility_off' : 'visibility' }}
+                        </span>
+                    </div>
 
-                <div class="options">
-                    <label><input type="checkbox"> Recordarme</label>
+                    <div class="options">
+                        <label><input type="checkbox" name="remember"> Recordarme</label>
 
-                    <a (click)="irAForgotPassword()" class="forgot-link">
-                        ¿Olvidaste tu contraseña?
-                    </a>
-                </div>
+                        <a (click)="irAForgotPassword()" class="forgot-link" style="cursor: pointer;">
+                            ¿Olvidaste tu contraseña?
+                        </a>
+                    </div>
 
-                <button (click)="iniciarSesion()" class="continue-btn">
-                    Continua →
-                </button>
+                    <button type="submit" class="continue-btn">
+                        Continua →
+                    </button>
+
+                </form>
 
                 <p class="derechos">
                     © 2025 HACKTHONY. Todos los derechos reservados. <br>
